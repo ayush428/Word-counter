@@ -114,7 +114,7 @@
     <div class="hp">
         <header>
             <h1>Word Counter</h1>
-            <button class="gb" style="font-size:24px; border:0"><i class="fa fa-github" style="font-size:36px"></i></button>
+            <button class="gb" onclick="window.open('https://github.com/ayush428/Word-counter/tree/main', '_blank')" style="font-size:24px; border:0"><i class="fa fa-github" style="font-size:36px"></i></button>
         </header>
     </div>
     
@@ -144,7 +144,32 @@
     </div>
     
     <script>
-        
+        let text = "";
+        var cc = document.getElementById("c");
+        var ww = document.getElementById("w");
+        var ss = document.getElementById("s");
+        ss.innerHTML = "0"
+        ww.innerHTML = "0"
+        cc.innerHTML = "0"
+        function process(){
+            text = document.getElementById("Text").value;
+            //console.log(text)
+            //console.log("Words :"+WordCounter(text))
+            ww.innerHTML = WordCounter(text);
+            ss.innerHTML = SentenceCounter(text);
+            cc.innerHTML = charCounter(text)
+        }
+        function WordCounter(w){
+            const arr = w.trim().split(/\s+/);
+            return arr.length;
+        }
+        function SentenceCounter(w){
+            return text.split(/[.?!]/g).filter(Boolean).length;
+        }
+        function charCounter(w){
+            return w.length;
+        }
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
